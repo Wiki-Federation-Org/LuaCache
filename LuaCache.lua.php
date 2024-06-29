@@ -103,7 +103,7 @@ class LuaCacheLibrary extends \Scribunto_LuaLibraryBase {
 		// Rename the keys to match what was passed in
 		$data = [];
 		foreach ( $cacheData as $cacheKey => $value ) {
-			if ( array_key_exists( $cacheKey, $cacheKeyToKey ) ) {
+			if ( isset($cacheKeyToKey[$cacheKey]) ) {
 				$key = $cacheKeyToKey[$cacheKey];
 				$data[$key] = $value;
 			}
